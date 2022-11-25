@@ -67,6 +67,7 @@ class Users implements MyInterface {
         let minutiChiamata = num;
         let costoPerMinuto = 0.20;
         let costoChiamata = minutiChiamata * costoPerMinuto;
+
         this.credito = this.credito - costoChiamata;
         this.numeroChiamate = this.numeroChiamate + 1;
     }
@@ -158,7 +159,7 @@ btnAzzera3.addEventListener("click", () => {
 
 // Aggiungi
 btnInvia1.addEventListener("click", () => {
-    if(!fieldAggiungi1.value || Number(fieldAggiungi1.value) <= 0){
+    if (!fieldAggiungi1.value || Number(fieldAggiungi1.value) <= 0) {
         return;
     }
     userFirst.ricarica(Number(fieldAggiungi1.value));
@@ -175,7 +176,7 @@ btnInvia1.addEventListener("click", () => {
     }, 2000)
 })
 btnInvia2.addEventListener("click", () => {
-    if(!fieldAggiungi2.value || Number(fieldAggiungi2.value) <= 0){
+    if (!fieldAggiungi2.value || Number(fieldAggiungi2.value) <= 0) {
         return;
     }
     userSecond.ricarica(Number(fieldAggiungi2.value));
@@ -192,7 +193,7 @@ btnInvia2.addEventListener("click", () => {
     }, 2000)
 })
 btnInvia3.addEventListener("click", () => {
-    if(!fieldAggiungi3.value || Number(fieldAggiungi3.value) <= 0){
+    if (!fieldAggiungi3.value || Number(fieldAggiungi3.value) <= 0) {
         return;
     }
     userThird.ricarica(Number(fieldAggiungi3.value));
@@ -211,9 +212,10 @@ btnInvia3.addEventListener("click", () => {
 
 // Chiama
 btnChiama1.addEventListener("click", () => {
-    if(!fieldChiamata1.value || Number(fieldChiamata1.value) <= 0){
+    if (!fieldChiamata1.value || Number(fieldChiamata1.value) <= 0 || Number(fieldChiamata1.value) * 0.20 >= userFirst.credito) {
         return;
     }
+
     userFirst.chiamata(Number(fieldChiamata1.value));
     spanChiamate1.innerHTML = `${userFirst.getNumeroChiamate()}`;
 
@@ -233,9 +235,10 @@ btnChiama1.addEventListener("click", () => {
     }, 2000)
 })
 btnChiama2.addEventListener("click", () => {
-    if(!fieldChiamata2.value || Number(fieldChiamata2.value) <= 0){
+    if (!fieldChiamata2.value || Number(fieldChiamata2.value) <= 0 || Number(fieldChiamata2.value) * 0.20 >= userFirst.credito) {
         return;
     }
+
     userSecond.chiamata(Number(fieldChiamata2.value));
     spanChiamate1.innerHTML = `${userSecond.getNumeroChiamate()}`;
 
@@ -255,9 +258,10 @@ btnChiama2.addEventListener("click", () => {
     }, 2000)
 })
 btnChiama3.addEventListener("click", () => {
-    if(!fieldChiamata3.value || Number(fieldChiamata3.value) <= 0){
+    if (!fieldChiamata3.value || Number(fieldChiamata3.value) <= 0 || Number(fieldChiamata3.value) * 0.20 >= userFirst.credito) {
         return;
     }
+
     userThird.chiamata(Number(fieldChiamata3.value));
     spanChiamate3.innerHTML = `${userThird.getNumeroChiamate()}`;
 

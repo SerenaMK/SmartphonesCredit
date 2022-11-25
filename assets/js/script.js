@@ -168,7 +168,7 @@ btnInvia3.addEventListener("click", function () {
 });
 // Chiama
 btnChiama1.addEventListener("click", function () {
-    if (!fieldChiamata1.value || Number(fieldChiamata1.value) <= 0) {
+    if (!fieldChiamata1.value || Number(fieldChiamata1.value) <= 0 || Number(fieldChiamata1.value) * 0.20 >= userFirst.credito) {
         return;
     }
     userFirst.chiamata(Number(fieldChiamata1.value));
@@ -189,7 +189,7 @@ btnChiama1.addEventListener("click", function () {
     }, 2000);
 });
 btnChiama2.addEventListener("click", function () {
-    if (!fieldChiamata2.value || Number(fieldChiamata2.value) <= 0) {
+    if (!fieldChiamata2.value || Number(fieldChiamata2.value) <= 0 || Number(fieldChiamata2.value) * 0.20 >= userFirst.credito) {
         return;
     }
     userSecond.chiamata(Number(fieldChiamata2.value));
@@ -210,7 +210,7 @@ btnChiama2.addEventListener("click", function () {
     }, 2000);
 });
 btnChiama3.addEventListener("click", function () {
-    if (!fieldChiamata3.value || Number(fieldChiamata3.value) <= 0) {
+    if (!fieldChiamata3.value || Number(fieldChiamata3.value) <= 0 || Number(fieldChiamata3.value) * 0.20 >= userFirst.credito) {
         return;
     }
     userThird.chiamata(Number(fieldChiamata3.value));
