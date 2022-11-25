@@ -121,6 +121,7 @@ btnConsole.addEventListener("click", () => {
     location.href = "console.html";
 })
 
+// Azzera
 btnAzzera1.addEventListener("click", () => {
     userFirst.azzeraChiamate();
     spanChiamate1.innerHTML = `${userFirst.getNumeroChiamate()}`;
@@ -132,7 +133,6 @@ btnAzzera1.addEventListener("click", () => {
         azzerato1.classList.add("d-none");
     }, 2000)
 })
-
 btnAzzera2.addEventListener("click", () => {
     userSecond.azzeraChiamate();
     spanChiamate2.innerHTML = `${userSecond.getNumeroChiamate()}`;
@@ -144,7 +144,6 @@ btnAzzera2.addEventListener("click", () => {
         azzerato2.classList.add("d-none");
     }, 2000)
 })
-
 btnAzzera3.addEventListener("click", () => {
     userThird.azzeraChiamate();
     spanChiamate3.innerHTML = `${userThird.getNumeroChiamate()}`;
@@ -157,18 +156,21 @@ btnAzzera3.addEventListener("click", () => {
     }, 2000)
 })
 
+// Aggiungi
 btnInvia1.addEventListener("click", () => {
     if(!fieldAggiungi1.value || Number(fieldAggiungi1.value) <= 0){
         return;
     }
     userFirst.ricarica(Number(fieldAggiungi1.value));
-    spanCredito1.innerHTML = `${userFirst.numero404()}`;
+    spanCredito1.innerHTML = `${Math.round(userFirst.numero404() * 100) / 100}`;
 
     add1.classList.remove("d-none");
     add1.classList.add("d-block");
+    btnInvia1.classList.add("disabled");
     setTimeout(() => {
         add1.classList.remove("d-block");
         add1.classList.add("d-none");
+        btnInvia1.classList.remove("disabled");
         fieldAggiungi1.value = "";
     }, 2000)
 })
@@ -177,32 +179,37 @@ btnInvia2.addEventListener("click", () => {
         return;
     }
     userSecond.ricarica(Number(fieldAggiungi2.value));
-    spanCredito2.innerHTML = `${userSecond.numero404()}`;
+    spanCredito2.innerHTML = `${Math.round(userSecond.numero404() * 100) / 100}`;
 
     add2.classList.remove("d-none");
     add2.classList.add("d-block");
+    btnInvia2.classList.add("disabled");
     setTimeout(() => {
         add2.classList.remove("d-block");
         add2.classList.add("d-none");
+        btnInvia2.classList.remove("disabled");
         fieldAggiungi2.value = "";
     }, 2000)
 })
 btnInvia3.addEventListener("click", () => {
-    if(!fieldAggiungi3.value || Number(fieldAggiungi2.value) <= 0){
+    if(!fieldAggiungi3.value || Number(fieldAggiungi3.value) <= 0){
         return;
     }
     userThird.ricarica(Number(fieldAggiungi3.value));
-    spanCredito3.innerHTML = `${userThird.numero404()}`;
+    spanCredito3.innerHTML = `${Math.round(userThird.numero404() * 100) / 100}`;
 
     add3.classList.remove("d-none");
     add3.classList.add("d-block");
+    btnInvia3.classList.add("disabled");
     setTimeout(() => {
         add3.classList.remove("d-block");
         add3.classList.add("d-none");
+        btnInvia3.classList.remove("disabled");
         fieldAggiungi3.value = "";
     }, 2000)
 })
 
+// Chiama
 btnChiama1.addEventListener("click", () => {
     if(!fieldChiamata1.value || Number(fieldChiamata1.value) <= 0){
         return;
@@ -214,11 +221,13 @@ btnChiama1.addEventListener("click", () => {
     calling1.classList.add("d-block");
     loading1.classList.remove("d-none");
     loading1.classList.add("d-block");
+    btnChiama1.classList.add("disabled");
     setTimeout(() => {
         calling1.classList.remove("d-block");
         calling1.classList.add("d-none");
         loading1.classList.remove("d-block");
         loading1.classList.add("d-none");
+        btnChiama1.classList.remove("disabled");
         fieldChiamata1.value = "";
         spanCredito1.innerHTML = `${Math.round(userFirst.numero404() * 100) / 100}`;
     }, 2000)
@@ -234,11 +243,13 @@ btnChiama2.addEventListener("click", () => {
     calling2.classList.add("d-block");
     loading2.classList.remove("d-none");
     loading2.classList.add("d-block");
+    btnChiama2.classList.add("disabled");
     setTimeout(() => {
         calling2.classList.remove("d-block");
         calling2.classList.add("d-none");
         loading2.classList.remove("d-block");
         loading2.classList.add("d-none");
+        btnChiama2.classList.remove("disabled");
         fieldChiamata2.value = "";
         spanCredito2.innerHTML = `${Math.round(userSecond.numero404() * 100) / 100}`;
     }, 2000)
@@ -254,11 +265,13 @@ btnChiama3.addEventListener("click", () => {
     calling3.classList.add("d-block");
     loading3.classList.remove("d-none");
     loading3.classList.add("d-block");
+    btnChiama3.classList.add("disabled");
     setTimeout(() => {
         calling3.classList.remove("d-block");
         calling3.classList.add("d-none");
         loading3.classList.remove("d-block");
         loading3.classList.add("d-none");
+        btnChiama3.classList.remove("disabled");
         fieldChiamata3.value = "";
         spanCredito3.innerHTML = `${Math.round(userThird.numero404() * 100) / 100}`;
     }, 2000)
