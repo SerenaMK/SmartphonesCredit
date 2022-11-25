@@ -33,6 +33,9 @@ let fieldChiamata3 = document.getElementById("chiamata3") as HTMLInputElement;
 let calling1 = document.getElementById("calling1") as HTMLElement;
 let calling2 = document.getElementById("calling2") as HTMLElement;
 let calling3 = document.getElementById("calling3") as HTMLElement;
+let loading1 = document.getElementById("loading1") as HTMLElement;
+let loading2 = document.getElementById("loading2") as HTMLElement;
+let loading3 = document.getElementById("loading3") as HTMLElement;
 
 // INTERFACES
 interface MyInterface {
@@ -155,6 +158,9 @@ btnAzzera3.addEventListener("click", () => {
 })
 
 btnInvia1.addEventListener("click", () => {
+    if(!fieldAggiungi1.value){
+        return;
+    }
     userFirst.ricarica(Number(fieldAggiungi1.value));
     spanCredito1.innerHTML = `${userFirst.numero404()}`;
 
@@ -167,6 +173,9 @@ btnInvia1.addEventListener("click", () => {
     }, 2000)
 })
 btnInvia2.addEventListener("click", () => {
+    if(!fieldAggiungi2.value){
+        return;
+    }
     userSecond.ricarica(Number(fieldAggiungi2.value));
     spanCredito2.innerHTML = `${userSecond.numero404()}`;
 
@@ -179,6 +188,9 @@ btnInvia2.addEventListener("click", () => {
     }, 2000)
 })
 btnInvia3.addEventListener("click", () => {
+    if(!fieldAggiungi3.value){
+        return;
+    }
     userThird.ricarica(Number(fieldAggiungi3.value));
     spanCredito3.innerHTML = `${userThird.numero404()}`;
 
@@ -192,41 +204,62 @@ btnInvia3.addEventListener("click", () => {
 })
 
 btnChiama1.addEventListener("click", () => {
+    if(!fieldChiamata1.value){
+        return;
+    }
     userFirst.chiamata(Number(fieldChiamata1.value));
     spanChiamate1.innerHTML = `${userFirst.getNumeroChiamate()}`;
 
     calling1.classList.remove("d-none");
     calling1.classList.add("d-block");
+    loading1.classList.remove("d-none");
+    loading1.classList.add("d-block");
     setTimeout(() => {
         calling1.classList.remove("d-block");
         calling1.classList.add("d-none");
+        loading1.classList.remove("d-block");
+        loading1.classList.add("d-none");
         fieldChiamata1.value = "";
-        spanCredito1.innerHTML = `${userFirst.numero404()}`;
+        spanCredito1.innerHTML = `${Math.round(userFirst.numero404() * 100) / 100}`;
     }, 2000)
 })
 btnChiama2.addEventListener("click", () => {
+    if(!fieldChiamata2.value){
+        return;
+    }
     userSecond.chiamata(Number(fieldChiamata2.value));
     spanChiamate1.innerHTML = `${userSecond.getNumeroChiamate()}`;
 
     calling2.classList.remove("d-none");
     calling2.classList.add("d-block");
+    loading2.classList.remove("d-none");
+    loading2.classList.add("d-block");
     setTimeout(() => {
         calling2.classList.remove("d-block");
         calling2.classList.add("d-none");
+        loading2.classList.remove("d-block");
+        loading2.classList.add("d-none");
         fieldChiamata2.value = "";
-        spanCredito2.innerHTML = `${userSecond.numero404()}`;
+        spanCredito2.innerHTML = `${Math.round(userSecond.numero404() * 100) / 100}`;
     }, 2000)
 })
 btnChiama3.addEventListener("click", () => {
+    if(!fieldChiamata3.value){
+        return;
+    }
     userThird.chiamata(Number(fieldChiamata3.value));
     spanChiamate3.innerHTML = `${userThird.getNumeroChiamate()}`;
 
     calling3.classList.remove("d-none");
     calling3.classList.add("d-block");
+    loading3.classList.remove("d-none");
+    loading3.classList.add("d-block");
     setTimeout(() => {
         calling3.classList.remove("d-block");
         calling3.classList.add("d-none");
+        loading3.classList.remove("d-block");
+        loading3.classList.add("d-none");
         fieldChiamata3.value = "";
-        spanCredito3.innerHTML = `${userThird.numero404()}`;
+        spanCredito3.innerHTML = `${Math.round(userThird.numero404() * 100) / 100}`;
     }, 2000)
 })

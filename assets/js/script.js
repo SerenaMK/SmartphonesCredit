@@ -30,6 +30,9 @@ var fieldChiamata3 = document.getElementById("chiamata3");
 var calling1 = document.getElementById("calling1");
 var calling2 = document.getElementById("calling2");
 var calling3 = document.getElementById("calling3");
+var loading1 = document.getElementById("loading1");
+var loading2 = document.getElementById("loading2");
+var loading3 = document.getElementById("loading3");
 // CLASSES
 var Users = /** @class */ (function () {
     function Users(_credito, _numeroChiamate) {
@@ -114,6 +117,9 @@ btnAzzera3.addEventListener("click", function () {
     }, 2000);
 });
 btnInvia1.addEventListener("click", function () {
+    if (!fieldAggiungi1.value) {
+        return;
+    }
     userFirst.ricarica(Number(fieldAggiungi1.value));
     spanCredito1.innerHTML = "".concat(userFirst.numero404());
     add1.classList.remove("d-none");
@@ -125,6 +131,9 @@ btnInvia1.addEventListener("click", function () {
     }, 2000);
 });
 btnInvia2.addEventListener("click", function () {
+    if (!fieldAggiungi2.value) {
+        return;
+    }
     userSecond.ricarica(Number(fieldAggiungi2.value));
     spanCredito2.innerHTML = "".concat(userSecond.numero404());
     add2.classList.remove("d-none");
@@ -136,6 +145,9 @@ btnInvia2.addEventListener("click", function () {
     }, 2000);
 });
 btnInvia3.addEventListener("click", function () {
+    if (!fieldAggiungi3.value) {
+        return;
+    }
     userThird.ricarica(Number(fieldAggiungi3.value));
     spanCredito3.innerHTML = "".concat(userThird.numero404());
     add3.classList.remove("d-none");
@@ -147,38 +159,59 @@ btnInvia3.addEventListener("click", function () {
     }, 2000);
 });
 btnChiama1.addEventListener("click", function () {
+    if (!fieldChiamata1.value) {
+        return;
+    }
     userFirst.chiamata(Number(fieldChiamata1.value));
     spanChiamate1.innerHTML = "".concat(userFirst.getNumeroChiamate());
     calling1.classList.remove("d-none");
     calling1.classList.add("d-block");
+    loading1.classList.remove("d-none");
+    loading1.classList.add("d-block");
     setTimeout(function () {
         calling1.classList.remove("d-block");
         calling1.classList.add("d-none");
+        loading1.classList.remove("d-block");
+        loading1.classList.add("d-none");
         fieldChiamata1.value = "";
-        spanCredito1.innerHTML = "".concat(userFirst.numero404());
+        spanCredito1.innerHTML = "".concat(Math.round(userFirst.numero404() * 100) / 100);
     }, 2000);
 });
 btnChiama2.addEventListener("click", function () {
+    if (!fieldChiamata2.value) {
+        return;
+    }
     userSecond.chiamata(Number(fieldChiamata2.value));
     spanChiamate1.innerHTML = "".concat(userSecond.getNumeroChiamate());
     calling2.classList.remove("d-none");
     calling2.classList.add("d-block");
+    loading2.classList.remove("d-none");
+    loading2.classList.add("d-block");
     setTimeout(function () {
         calling2.classList.remove("d-block");
         calling2.classList.add("d-none");
+        loading2.classList.remove("d-block");
+        loading2.classList.add("d-none");
         fieldChiamata2.value = "";
-        spanCredito2.innerHTML = "".concat(userSecond.numero404());
+        spanCredito2.innerHTML = "".concat(Math.round(userSecond.numero404() * 100) / 100);
     }, 2000);
 });
 btnChiama3.addEventListener("click", function () {
+    if (!fieldChiamata3.value) {
+        return;
+    }
     userThird.chiamata(Number(fieldChiamata3.value));
     spanChiamate3.innerHTML = "".concat(userThird.getNumeroChiamate());
     calling3.classList.remove("d-none");
     calling3.classList.add("d-block");
+    loading3.classList.remove("d-none");
+    loading3.classList.add("d-block");
     setTimeout(function () {
         calling3.classList.remove("d-block");
         calling3.classList.add("d-none");
+        loading3.classList.remove("d-block");
+        loading3.classList.add("d-none");
         fieldChiamata3.value = "";
-        spanCredito3.innerHTML = "".concat(userThird.numero404());
+        spanCredito3.innerHTML = "".concat(Math.round(userThird.numero404() * 100) / 100);
     }, 2000);
 });
