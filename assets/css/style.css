@@ -1,0 +1,98 @@
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.phone {
+    position: relative;
+    border: 6px solid #2C2C2C;
+    border-radius: 20px;
+    width: 300px;
+    height: 500px;
+    background: linear-gradient(0deg, #F3F8FB, #FEFEFE);
+    box-shadow: inset 0 3px 5px #9f9e9e;
+}
+
+.inside {
+    margin: 0 auto;
+    width: 260px;
+    height: 455px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px lightgrey;
+}
+
+.phoneTop {
+    position: absolute;
+    top: -3px;
+    left: 96px;
+    background-color: #2C2C2C;
+    border-radius: 0 0 10px 10px;
+    width: 100px;
+    height: 19px;
+}
+
+.phoneBottom {
+    position: absolute;
+    bottom: 15px;
+    left: 96px;
+    width: 100px;
+    height: 34px;
+    border: 1px solid #2C2C2C;
+}
+
+.line {
+    position: absolute;
+    top: 7px;
+    left: 13px;
+    background-color: black;
+    border-radius: 10px;
+    width: 60px;
+    height: 4px;
+}
+
+.camera {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background-color: black;
+    border-radius: 10px;
+    width: 8px;
+    height: 8px;
+}
+
+.bi-caret-left-fill {
+    font-size: 1.5em;
+}
+
+
+.console {
+    background-color: #2C2C2C;
+    color: #F8F9FA;
+    width: 300px;
+    height: 520px;
+}
+
+.screen {
+    color: #939393;
+}
+
+span {
+    color: #2C2C2C;
+}
