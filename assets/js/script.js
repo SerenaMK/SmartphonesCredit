@@ -117,7 +117,7 @@ btnAzzera3.addEventListener("click", function () {
     }, 2000);
 });
 btnInvia1.addEventListener("click", function () {
-    if (!fieldAggiungi1.value) {
+    if (!fieldAggiungi1.value || Number(fieldAggiungi1.value) <= 0) {
         return;
     }
     userFirst.ricarica(Number(fieldAggiungi1.value));
@@ -131,7 +131,7 @@ btnInvia1.addEventListener("click", function () {
     }, 2000);
 });
 btnInvia2.addEventListener("click", function () {
-    if (!fieldAggiungi2.value) {
+    if (!fieldAggiungi2.value || Number(fieldAggiungi2.value) <= 0) {
         return;
     }
     userSecond.ricarica(Number(fieldAggiungi2.value));
@@ -145,7 +145,7 @@ btnInvia2.addEventListener("click", function () {
     }, 2000);
 });
 btnInvia3.addEventListener("click", function () {
-    if (!fieldAggiungi3.value) {
+    if (!fieldAggiungi3.value || Number(fieldAggiungi2.value) <= 0) {
         return;
     }
     userThird.ricarica(Number(fieldAggiungi3.value));
@@ -159,7 +159,7 @@ btnInvia3.addEventListener("click", function () {
     }, 2000);
 });
 btnChiama1.addEventListener("click", function () {
-    if (!fieldChiamata1.value) {
+    if (!fieldChiamata1.value || Number(fieldChiamata1.value) <= 0) {
         return;
     }
     userFirst.chiamata(Number(fieldChiamata1.value));
@@ -178,7 +178,7 @@ btnChiama1.addEventListener("click", function () {
     }, 2000);
 });
 btnChiama2.addEventListener("click", function () {
-    if (!fieldChiamata2.value) {
+    if (!fieldChiamata2.value || Number(fieldChiamata2.value) <= 0) {
         return;
     }
     userSecond.chiamata(Number(fieldChiamata2.value));
@@ -197,7 +197,7 @@ btnChiama2.addEventListener("click", function () {
     }, 2000);
 });
 btnChiama3.addEventListener("click", function () {
-    if (!fieldChiamata3.value) {
+    if (!fieldChiamata3.value || Number(fieldChiamata3.value) <= 0) {
         return;
     }
     userThird.chiamata(Number(fieldChiamata3.value));
